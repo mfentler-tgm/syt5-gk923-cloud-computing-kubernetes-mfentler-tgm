@@ -58,3 +58,29 @@ Redis pod (redis.yaml)
  Mountet ein bestehendes Filesystem auf dem node-Filesystem.
 
 ## Multiple Containers
+Es gibt oft Anwendungen bei denen mehrerer Container zusammen arbeiten sollen. Ein Beispiel kann eine Webseite sein, die einen Git-Hub Helperjob implementiert.  
+Was man in diesem Beispiel noch sehen kann, ist das beide Container das Volume "www-data" mounten, der Webserver darauf aber nur readonly Zugriffsrechte hat. 
+
+    apiVersion: v1
+    kind: Pod
+    metadata:
+      name: www
+    spec:
+      containers:
+      - name: nginx
+        image: nginx
+        volumeMounts:
+        - mountPath: /srv/www
+          name: www-data
+          readOnly: true
+      - name: git-monitor
+        image: kubernetes/git-monitor
+        env:
+        - name: GIT_REPO
+          value: http://github.com/some/repo.git
+        volumeMounts:
+        - mountPath: /data
+          name: www-data
+      volumes:
+      - name: www-data
+        emptyDir: {}
