@@ -43,6 +43,13 @@ Jetzt kann man curlen:
 
     sudo curl $(sudo minikube service hello-minikube --url)
 
+Jetzt kann man das Beispiel wieder löschen und Minikube stoppen:
+
+    sudo kubectl delete services hello-minikube
+    sudo kubectl delete deployment hello-minikube
+    
+    sudo minikube stop
+    
 ## Quellen
 [1]https://kubernetes.io/docs/tasks/tools/install-kubectl/  
 [2]https://kubernetes.io/docs/tasks/tools/install-minikube/  
