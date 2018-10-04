@@ -9,18 +9,18 @@ Ein Pod eschreibt das Deployment von einem oder mehreren Container. Der Pod besc
 
 Pod erstellen und alle bestehenden auflisten: 
 
-    kubectl create -f https://k8s.io/examples/pods/simple-pod.yaml
-    kubectl get pods
+    sudo kubectl create -f https://k8s.io/examples/pods/simple-pod.yaml
+    sudo kubectl get pods
 Die IP des Pods ist meistens nicht von außen erreichbar.  
 Workaround: Busy-Box erstellen
 
-    kubectl run busybox --image=busybox --restart=Never --tty -i --generator=run-pod/v1 --env "POD_IP=$(kubectl get pod nginx -o go-  template='{{.status.podIP}}')"
+    sudo kubectl run busybox --image=busybox --restart=Never --tty -i --generator=run-pod/v1 --env "POD_IP=$(sudo kubectl get pod nginx -o go-template='{{.status.podIP}}')"
     u@busybox$ wget -qO- http://$POD_IP # Run in the busybox container
     u@busybox$ exit # Exit the busybox container
 Busybox und Pod wieder löschen:
 
-    kubectl delete pod busybox
-    kubectl delete pod nginx
+    sudo kubectl delete pod busybox
+    sudo kubectl delete pod nginx
 ## Volumes
 Um einen persitenten Speicher zu erstellen werden Volumes(Speicherplätze) verwendet.  
 Volume definieren:
