@@ -37,6 +37,9 @@ Volume Mount mit container definition:
 #### Beispiel
 Redis pod (redis.yaml)
 
+    touch redis.yaml
+    
+    
     apiVersion: v1
     kind: Pod
     metadata:
