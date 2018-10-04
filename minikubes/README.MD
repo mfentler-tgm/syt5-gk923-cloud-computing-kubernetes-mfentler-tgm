@@ -29,10 +29,22 @@ Man kann die Installation verifizieren in dem man folgendes schreibt und kein Fe
     sudo kubectl version
 
 ## Aufgabendurchführung
-Nun werden die Schritte aus dem Kubernet101[3] auch hier ausgeführt.  
-Die durchgeführten Schritte sind im Main-README ersichtlich.
+In diesem Beispiel wird nun ein Echoserver-Pod erstellt:
+
+    sudo kubectl run hello-minikube --image=k8s.gcr.io/echoserver:1.10 --port=8080
+Anschließend muss man den Pod exposen
+
+    sudo kubectl expose deployment hello-minikube --type=NodePort
+Somit hat man nun den Pod erstellt. Dieser braucht allerdings ein paar Minuten bis er fertig ist. Überprüfen kann man das mit dem Command:
+
+    sudo kubectl get pod
+Da sollte dann bei dem Status des Pods "Running" stehen.  
+Jetzt kann man curlen:
+
+    sudo curl $(sudo minikube service hello-minikube --url)
 
 ## Quellen
 [1]https://kubernetes.io/docs/tasks/tools/install-kubectl/  
 [2]https://kubernetes.io/docs/tasks/tools/install-minikube/  
-[3]https://kubernetes.io/docs/tutorials/k8s101/
+[3]https://kubernetes.io/docs/tutorials/k8s101/  
+[4]https://kubernetes.io/docs/setup/minikube/
