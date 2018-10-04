@@ -29,7 +29,7 @@ Man kann die Installation verifizieren in dem man folgendes schreibt und kein Fe
 
 ## Aufgabendurchführung
 Nun werden die Schritte aus dem Kubernet101[3] auch hier ausgeführt.  
-
+Die durchgeführten Schritte sind im Main-README ersichtlich.
 
 ## Quellen
 [1]https://kubernetes.io/docs/tasks/tools/install-kubectl/  
