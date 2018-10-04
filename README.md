@@ -21,7 +21,7 @@ Busybox wieder löschen:
 
     kubectl delete pod busybox
 ## Volumes
-Um einen persitenten Speicher zu erstellen werden Volumes verwendet.  
+Um einen persitenten Speicher zu erstellen werden Volumes(Speicherplätze) verwendet.  
 Volume definieren:
 
     volumes:
