@@ -3,7 +3,8 @@ Minikube ist ein Tool, dass es einem erlaubt Kubernetes lokal auszuführen. Auf 
 
 ## Vorraussetzungen
 
-Virtuelle Maschine
+Virtuelle Maschine (ubuntu)
+Docker
 Installation von Kuberenetes [1]
 Installation von Minikubes [2]
 
@@ -11,6 +12,7 @@ Installation von Minikubes [2]
 
 
 ### Installation Minikube
+
 
 
 ## Quellen
