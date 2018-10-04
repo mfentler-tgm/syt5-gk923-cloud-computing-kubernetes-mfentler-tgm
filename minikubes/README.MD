@@ -18,10 +18,11 @@ Dieses funktioniert aber wiederrum nur dann, wenn auch minikube installiert wurd
 Um Minikube zu starten benötigt man außerdem Docker:
 
     sudo apt-get install docker.io
-### Installation Minikube
+### Installation & Start von Minikube
 Mit diesem Befehl wird Minikube automatisch installiert, sofern es noch nicht da ist.  
-Mit der Option "--vm-driver=none" kann man sagen, dass in unserem Fall Docker verwendet werden soll.
+Mit der Option "--vm-driver=none" kann man sagen, dass in unserem Fall Docker verwendet werden soll um Minikube zu starten.
 
+    curl -Lo minikube https://storage.googleapis.com/minikube/releases/v0.29.0/minikube-linux-amd64 && chmod +x minikube && sudo cp minikube /usr/local/bin/ && rm minikube
     sudo minikube start --vm-driver=none
 Man kann die Installation verifizieren in dem man folgendes schreibt und kein Fehler im Output angezeigt wird:
 
