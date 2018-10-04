@@ -14,9 +14,10 @@ Installation von Minikubes [2]
 
 ### Installation Docker
 
+    sudo apt-get install docker.io
 ### Installation Minikube
 
-
+    sudo minikube start --vm-driver=none
 
 ## Quellen
 [1]https://kubernetes.io/docs/tasks/tools/install-kubectl/  
