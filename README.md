@@ -17,9 +17,10 @@ Workaround: Busy-Box erstellen
     kubectl run busybox --image=busybox --restart=Never --tty -i --generator=run-pod/v1 --env "POD_IP=$(kubectl get pod nginx -o go-  template='{{.status.podIP}}')"
     u@busybox$ wget -qO- http://$POD_IP # Run in the busybox container
     u@busybox$ exit # Exit the busybox container
-Busybox wieder löschen:
+Busybox und Pod wieder löschen:
 
     kubectl delete pod busybox
+    kubectl delete pod nginx
 ## Volumes
 Um einen persitenten Speicher zu erstellen werden Volumes(Speicherplätze) verwendet.  
 Volume definieren:
